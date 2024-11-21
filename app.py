@@ -13,7 +13,7 @@ load_dotenv()
 
 # Load data function
 def load_data(file_path):
-    """Load the Tweet Emotion dataset."""
+    """Load the Emotion dataset."""
     df = pd.read_csv(file_path)
     return df
 
@@ -61,7 +61,7 @@ class EmotionAnalyzer:
 app = Flask(__name__)
 
 # Load dataset and train classifier when starting the app
-df = load_data('tweet_emotions.csv')  # Ensure this path is correct
+df = load_data('data.csv')  # Ensure this path is correct
 analyzer = EmotionAnalyzer()
 analyzer.classifier.train(df)
 
